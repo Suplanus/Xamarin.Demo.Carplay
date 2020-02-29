@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MediaManager;
 using Xamarin.Forms;
 
 namespace Xamarin.Demo.Carplay
@@ -16,6 +17,34 @@ namespace Xamarin.Demo.Carplay
         public MainPage()
         {
             InitializeComponent();
+        }
+
+        protected override async void OnAppearing()
+        {
+            base.OnAppearing();
+
+            await PlayPauseAsync();
+        }
+
+        async void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+            await PlayPauseAsync();
+        }
+
+        private async Task PlayPauseAsync()
+        {
+            if (CrossMediaManager.Current.IsPlaying())
+            {
+                ButtonPlayPause.Text = "Play";
+                await CrossMediaManager.Current.Pause();
+            }
+            else
+            {
+                ButtonPlayPause.Text = "Pause";
+                string url = @"http://www.rockantenne.de/webradio/channels/heavy-metal.aac.pls";
+                await CrossMediaManager.Current.Play(url);
+
+            }
         }
     }
 }
