@@ -2,7 +2,7 @@
 using Foundation;
 using MediaPlayer;
 
-namespace Xamarin.Demo.Carplay.iOS
+namespace Xamarin.Demo.Carplay.iOS.Models
 {
     internal class PlayableContentDataSource : MPPlayableContentDataSource
     {

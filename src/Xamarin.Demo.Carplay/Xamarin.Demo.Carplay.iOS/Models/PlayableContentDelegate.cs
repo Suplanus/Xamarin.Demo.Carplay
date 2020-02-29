@@ -2,7 +2,7 @@
 using Foundation;
 using MediaPlayer;
 
-namespace Xamarin.Demo.Carplay.iOS
+namespace Xamarin.Demo.Carplay.iOS.Models
 {
     internal class PlayableContentDelegate : MPPlayableContentDelegate
     {
@@ -10,6 +10,8 @@ namespace Xamarin.Demo.Carplay.iOS
         {
             base.PlayableContentManager(contentManager, indexPath, completionHandler);
         }
+
+        
 
         [Export("playableContentManager:initiatePlaybackOfContentItemAtIndexPath:completionHandler:")]
         public override void InitiatePlaybackOfContentItem(MPPlayableContentManager contentManager, NSIndexPath indexPath, Action<NSError> completionHandler)
