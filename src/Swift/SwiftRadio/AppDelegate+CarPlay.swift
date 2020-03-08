@@ -16,6 +16,8 @@ extension AppDelegate {
         
         playableContentManager?.delegate = self
         playableContentManager?.dataSource = self
+        
+        
     }
 }
 
@@ -25,7 +27,6 @@ extension AppDelegate: MPPlayableContentDelegate {
         
         DispatchQueue.main.async {            
             if indexPath.count == 2 {
-                
                 
             }
             completionHandler(nil)
@@ -53,7 +54,7 @@ extension AppDelegate: MPPlayableContentDataSource {
             return 1
         }
         
-         return 3;
+        return 2
     }
     
     func contentItem(at indexPath: IndexPath) -> MPContentItem? {
@@ -73,12 +74,12 @@ extension AppDelegate: MPPlayableContentDataSource {
             // Stations section
             
             
-            let item = MPContentItem(identifier: "test")
+            let item = MPContentItem(identifier: "\(indexPath)")
             item.title = "TITLE"
             item.subtitle = "SUBTITLE"
             item.isPlayable = true
             item.isStreamingContent = true
-//
+            
 //            if station.imageURL.contains("http") {
 //                ImageLoader.sharedLoader.imageForUrl(urlString: station.imageURL) { image, _ in
 //                    DispatchQueue.main.async {

@@ -8,12 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		5FDEE0221F72FF980064333C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */; };
-		81AD229B21646DEA002ADFDD /* FRadioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD229821646DEA002ADFDD /* FRadioPlayer.swift */; };
-		81AD229C21646DEA002ADFDD /* FRadioAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD229921646DEA002ADFDD /* FRadioAPI.swift */; };
-		81AD229D21646DEA002ADFDD /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81AD229A21646DEA002ADFDD /* Reachability.swift */; };
 		9409E11C1ABF6FEA00312E2B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9409E11B1ABF6FEA00312E2B /* AppDelegate.swift */; };
 		9409E1261ABF6FEA00312E2B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9409E1251ABF6FEA00312E2B /* Images.xcassets */; };
-		94D260911B45D20000DE671C /* SwiftRadio-Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94D260901B45D20000DE671C /* SwiftRadio-Settings.swift */; };
 		CE108E7322060C3F003CDF06 /* AppDelegate+CarPlay.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE108E7222060C3F003CDF06 /* AppDelegate+CarPlay.swift */; };
 		CE108E7622060E4B003CDF06 /* CarPlayPlaylist.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE108E7522060E4B003CDF06 /* CarPlayPlaylist.swift */; };
 		CF72ACE721F7155200461EED /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CF72ACE621F714D000461EED /* Main.storyboard */; };
@@ -30,16 +26,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		2C5545BA1C1124DE00728469 /* SwiftRadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SwiftRadioUITests.xctest; path = "/Users/moz/Documents/GitHub/Xamarin.Demo.Carplay/src/Swift/build/Debug-iphoneos/SwiftRadioUITests.xctest"; sourceTree = "<absolute>"; };
 		5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		81AD229821646DEA002ADFDD /* FRadioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioPlayer.swift; sourceTree = "<group>"; };
-		81AD229921646DEA002ADFDD /* FRadioAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FRadioAPI.swift; sourceTree = "<group>"; };
-		81AD229A21646DEA002ADFDD /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		9409E1161ABF6FEA00312E2B /* SwiftRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = SwiftRadio.app; path = "/Users/moz/Documents/GitHub/Xamarin.Demo.Carplay/src/Swift/build/Debug-iphoneos/SwiftRadio.app"; sourceTree = "<absolute>"; };
 		9409E11A1ABF6FEA00312E2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		9409E11B1ABF6FEA00312E2B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		9409E1251ABF6FEA00312E2B /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		94D260901B45D20000DE671C /* SwiftRadio-Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "SwiftRadio-Settings.swift"; sourceTree = "<group>"; };
+		A9470A562415746B009842E1 /* SwiftRadio.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftRadio.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9470A572415746B009842E1 /* SwiftRadioUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = SwiftRadioUITests.xctest; path = "/Users/moz/Documents/GitHub/Xamarin.Demo.Carplay/src/Swift/build/Debug-iphoneos/SwiftRadioUITests.xctest"; sourceTree = "<absolute>"; };
 		CE108E6E22060BCE003CDF06 /* SwiftRadio.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftRadio.entitlements; sourceTree = "<group>"; };
 		CE108E7222060C3F003CDF06 /* AppDelegate+CarPlay.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDelegate+CarPlay.swift"; sourceTree = "<group>"; };
 		CE108E7522060E4B003CDF06 /* CarPlayPlaylist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarPlayPlaylist.swift; sourceTree = "<group>"; };
@@ -64,19 +56,11 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5F22B9DE1F72A8D800CB5911 /* Libraries */ = {
-			isa = PBXGroup;
-			children = (
-				CAA7C15A1FD77F3A003CABDF /* FRadioPlayer */,
-			);
-			path = Libraries;
-			sourceTree = "<group>";
-		};
 		9409E10D1ABF6FE900312E2B = {
 			isa = PBXGroup;
 			children = (
 				9409E1181ABF6FEA00312E2B /* SwiftRadio */,
-				CE108E6F22060BCE003CDF06 /* Frameworks */,
+				A9470A562415746B009842E1 /* SwiftRadio.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -86,11 +70,9 @@
 				CE108E6E22060BCE003CDF06 /* SwiftRadio.entitlements */,
 				CE108E7422060DCB003CDF06 /* CarPlay */,
 				9409E11B1ABF6FEA00312E2B /* AppDelegate.swift */,
-				94D260901B45D20000DE671C /* SwiftRadio-Settings.swift */,
 				CF72ACE621F714D000461EED /* Main.storyboard */,
 				9409E1251ABF6FEA00312E2B /* Images.xcassets */,
 				9409E1191ABF6FEA00312E2B /* Supporting Files */,
-				5F22B9DE1F72A8D800CB5911 /* Libraries */,
 			);
 			path = SwiftRadio;
 			sourceTree = "<group>";
@@ -102,23 +84,6 @@
 				5FDEE0211F72FF980064333C /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		CAA7C15A1FD77F3A003CABDF /* FRadioPlayer */ = {
-			isa = PBXGroup;
-			children = (
-				81AD229921646DEA002ADFDD /* FRadioAPI.swift */,
-				81AD229821646DEA002ADFDD /* FRadioPlayer.swift */,
-				81AD229A21646DEA002ADFDD /* Reachability.swift */,
-			);
-			path = FRadioPlayer;
-			sourceTree = "<group>";
-		};
-		CE108E6F22060BCE003CDF06 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		CE108E7422060DCB003CDF06 /* CarPlay */ = {
@@ -148,7 +113,7 @@
 			);
 			name = SwiftRadioUITests;
 			productName = SwiftRadioUITests;
-			productReference = 2C5545BA1C1124DE00728469 /* SwiftRadioUITests.xctest */;
+			productReference = A9470A572415746B009842E1 /* SwiftRadioUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 		9409E1151ABF6FEA00312E2B /* SwiftRadio */ = {
@@ -165,7 +130,7 @@
 			);
 			name = SwiftRadio;
 			productName = RadioPro;
-			productReference = 9409E1161ABF6FEA00312E2B /* SwiftRadio.app */;
+			productReference = A9470A562415746B009842E1 /* SwiftRadio.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -250,13 +215,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				94D260911B45D20000DE671C /* SwiftRadio-Settings.swift in Sources */,
 				CE108E7322060C3F003CDF06 /* AppDelegate+CarPlay.swift in Sources */,
-				81AD229D21646DEA002ADFDD /* Reachability.swift in Sources */,
 				9409E11C1ABF6FEA00312E2B /* AppDelegate.swift in Sources */,
 				CE108E7622060E4B003CDF06 /* CarPlayPlaylist.swift in Sources */,
-				81AD229B21646DEA002ADFDD /* FRadioPlayer.swift in Sources */,
-				81AD229C21646DEA002ADFDD /* FRadioAPI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

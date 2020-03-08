@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
+    
     // CarPlay
     var playableContentManager: MPPlayableContentManager?
     let carplayPlaylist = CarPlayPlaylist()
@@ -26,10 +27,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Make status bar white
         UINavigationBar.appearance().barStyle = .black
         
-        // FRadioPlayer config
-        FRadioPlayer.shared.isAutoPlay = true
-        FRadioPlayer.shared.enableArtwork = true
-        FRadioPlayer.shared.artworkSize = 600
+    
         
         setupCarPlay()
         
@@ -74,11 +72,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         super.remoteControlReceived(with: event)
         
         guard let event = event, event.type == .remoteControl else { return }
-        
-        switch event.subtype {                
-        default:
-            break
-        }
+       
     }
 }
 

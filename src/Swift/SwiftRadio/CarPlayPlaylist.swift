@@ -9,10 +9,9 @@
 import Foundation
 
 class CarPlayPlaylist {
-        
-        
+    
+    
     func load(_ completion: @escaping (Error?) -> Void) {
-        
             completion(nil)
         }
         
