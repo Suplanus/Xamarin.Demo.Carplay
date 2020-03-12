@@ -1,19 +1,23 @@
-﻿using Foundation;
+﻿using CarPlay;
+using Foundation;
 using MediaManager;
 using MediaPlayer;
 using UIKit;
 using Xamarin.Demo.Carplay.iOS.Models;
+using Xamarin.Forms.Platform.iOS;
 
 namespace Xamarin.Demo.Carplay.iOS
 {
   [Register("AppDelegate")]
-  public partial class AppDelegate : global::Xamarin.Forms.Platform.iOS.FormsApplicationDelegate
+  public class AppDelegate : FormsApplicationDelegate
   {
-    MPPlayableContentManager _playableContentManager;
+    private MPPlayableContentManager _playableContentManager;
+
+    public CPApplicationDelegate CpApplicationDelegate;
 
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
-      global::Xamarin.Forms.Forms.Init();
+      Forms.Forms.Init();
       LoadApplication(new App());
 
       CrossMediaManager.Current.Init();
@@ -25,6 +29,11 @@ namespace Xamarin.Demo.Carplay.iOS
 
     private void SetupCarPlay()
     {
+      CarPlayApplicationDelegate carPlayApplicationDelegate = new CarPlayApplicationDelegate();
+      carPlayApplicationDelegate.Connected = Connected;
+      carPlayApplicationDelegate.Disconnected = Disconnected;
+      CpApplicationDelegate = carPlayApplicationDelegate;
+
       _playableContentManager = MPPlayableContentManager.Shared;
 
       PlayableContentDelegate playableContentDelegate = new PlayableContentDelegate();
@@ -32,6 +41,17 @@ namespace Xamarin.Demo.Carplay.iOS
 
       PlayableContentDataSource playableContentDataSource = new PlayableContentDataSource();
       _playableContentManager.DataSource = playableContentDataSource;
+    }
+
+    private void Disconnected(UIApplication application, CPInterfaceController interfaceController, CPWindow window)
+    {
+      
+
+    }
+
+    private void Connected(UIApplication application, CPInterfaceController interfaceController, CPWindow window)
+    {
+    
     }
   }
 }

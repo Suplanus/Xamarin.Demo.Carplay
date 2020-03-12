@@ -64,10 +64,12 @@
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="CarPlayApplicationDelegate.cs" />
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
+    <Compile Include="Models\XamarinCarplay.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\AppDelegateDataSource.cs" />
     <Compile Include="Models\PlayableContentDelegate.cs" />
@@ -142,7 +144,5 @@
       <Name>Xamarin.Demo.Carplay</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Models\" />
-  </ItemGroup>
+  <ItemGroup />
 </Project>

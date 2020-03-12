@@ -48,6 +48,13 @@ namespace Xamarin.Demo.Carplay.iOS.Models
 
     }
 
+    public override void GetContentItem(string identifier, Action<MPContentItem, NSError> completionHandler)
+    {
+      base.GetContentItem(identifier, completionHandler);
+    }
+
+    
+
     private MPMediaItemArtwork GetImageFromUrl(string url)
     {
       UIImage image = null;

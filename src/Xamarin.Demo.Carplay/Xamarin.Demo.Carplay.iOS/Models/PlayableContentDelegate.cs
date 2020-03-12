@@ -18,5 +18,19 @@ namespace Xamarin.Demo.Carplay.iOS.Models
         {
             
         }
+
+        public override nuint RetainCount { get; }
+
+        public override void ContextUpdated(MPPlayableContentManager contentManager, MPPlayableContentManagerContext context)
+        {
+          base.ContextUpdated(contentManager, context);
+        }
+
+        public override NSDictionary GetDictionaryOfValuesFromKeys(NSString[] keys)
+        {
+          return base.GetDictionaryOfValuesFromKeys(keys);
+        }
+
+        
     }
 }
