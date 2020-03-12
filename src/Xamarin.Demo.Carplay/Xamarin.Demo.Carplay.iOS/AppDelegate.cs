@@ -13,7 +13,7 @@ namespace Xamarin.Demo.Carplay.iOS
   {
     private MPPlayableContentManager _playableContentManager;
 
-    public CPApplicationDelegate CpApplicationDelegate;
+    public CPTemplateApplicationScene CPTemplateApplicationScene;
 
     public override bool FinishedLaunching(UIApplication app, NSDictionary options)
     {
@@ -29,10 +29,10 @@ namespace Xamarin.Demo.Carplay.iOS
 
     private void SetupCarPlay()
     {
+      CPTemplateApplicationScene = new CPTemplateApplicationScene();
       CarPlayApplicationDelegate carPlayApplicationDelegate = new CarPlayApplicationDelegate();
       carPlayApplicationDelegate.Connected = Connected;
-      carPlayApplicationDelegate.Disconnected = Disconnected;
-      CpApplicationDelegate = carPlayApplicationDelegate;
+      CPTemplateApplicationScene.Delegate = carPlayApplicationDelegate;
 
       _playableContentManager = MPPlayableContentManager.Shared;
 
@@ -43,15 +43,9 @@ namespace Xamarin.Demo.Carplay.iOS
       _playableContentManager.DataSource = playableContentDataSource;
     }
 
-    private void Disconnected(UIApplication application, CPInterfaceController interfaceController, CPWindow window)
+    private void Connected(CPTemplateApplicationScene templateapplicationscene, CPInterfaceController interfacecontroller, CPWindow window)
     {
       
-
-    }
-
-    private void Connected(UIApplication application, CPInterfaceController interfaceController, CPWindow window)
-    {
-    
     }
   }
 }

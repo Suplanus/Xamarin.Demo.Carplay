@@ -3,26 +3,19 @@ using UIKit;
 
 namespace Xamarin.Demo.Carplay.iOS
 {
-  public class CarPlayApplicationDelegate : CPApplicationDelegate
+  public class CarPlayApplicationDelegate : CPTemplateApplicationSceneDelegate
   {
     public delegate void CarPlayApplicationParameter(
-      UIApplication application, CPInterfaceController interfaceController, CPWindow window);
+      CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController, CPWindow window);
 
     public CarPlayApplicationParameter Connected { get; set; }
     public CarPlayApplicationParameter Disconnected { get; set; }
 
-    public override void DidConnectCarInterfaceController(
-      UIApplication application, CPInterfaceController interfaceController, CPWindow window)
+    public override void DidConnect(
+      CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController, CPWindow window)
     {
-      Connected?.Invoke(application, interfaceController, window);
+      base.DidConnect(templateApplicationScene, interfaceController, window);
+      Connected?.Invoke(templateApplicationScene, interfaceController, window);
     }
-
-    public override void DidDisconnectCarInterfaceController(
-      UIApplication application, CPInterfaceController interfaceController, CPWindow window)
-    {
-      Disconnected?.Invoke(application, interfaceController, window);
-    }
-
-
   }
 }
