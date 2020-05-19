@@ -17,19 +17,20 @@ namespace Xamarin.Demo.Carplay.iOS.Models
         var item = new MPContentItem("Stations");
         item.Title = "Stations";
         item.Container = true;
-        item.Playable = false;
-        item.Artwork = GetImageFromUrl(_defaultImage);
+        item.Playable = false;               
+        //item.Artwork = GetImageFromUrl(_defaultImage);
         return item;
       }
       else
       {
         // SubItems
-        var item = new MPContentItem("Test" + indexPath.Length);
-        item.Title = "TITLE" + indexPath.Length;
-        item.Subtitle = "SUBTITLE" + indexPath.Length;
+        var item = new MPContentItem("Test" + indexPath.Row);
+        item.Title = "TITLE" + indexPath.Row;
+        item.Subtitle = "SUBTITLE" + indexPath.Row;
         item.Playable = true;
-        item.StreamingContent = true;
-        item.Artwork = GetImageFromUrl(_defaultImage);
+        item.StreamingContent = false;
+                
+        //item.Artwork = GetImageFromUrl(_defaultImage);
         return item;
       }
     }
@@ -42,18 +43,6 @@ namespace Xamarin.Demo.Carplay.iOS.Models
       }
       return 3;
     }
-
-    public override void BeginLoadingChildItems(NSIndexPath indexPath, Action<NSError> completionHandler)
-    {
-
-    }
-
-    public override void GetContentItem(string identifier, Action<MPContentItem, NSError> completionHandler)
-    {
-      base.GetContentItem(identifier, completionHandler);
-    }
-
-    
 
     private MPMediaItemArtwork GetImageFromUrl(string url)
     {

@@ -29,23 +29,17 @@ namespace Xamarin.Demo.Carplay.iOS
 
     private void SetupCarPlay()
     {
-      CPTemplateApplicationScene = new CPTemplateApplicationScene();
-      CarPlayApplicationDelegate carPlayApplicationDelegate = new CarPlayApplicationDelegate();
-      carPlayApplicationDelegate.Connected = Connected;
-      CPTemplateApplicationScene.Delegate = carPlayApplicationDelegate;
+      //CPTemplateApplicationScene = new CPTemplateApplicationScene();
+      //CarPlayApplicationDelegate carPlayApplicationDelegate = new CarPlayApplicationDelegate();      
+      //CPTemplateApplicationScene.Delegate = carPlayApplicationDelegate;
 
-      _playableContentManager = MPPlayableContentManager.Shared;
+      _playableContentManager = MPPlayableContentManager.Shared;      
 
       PlayableContentDelegate playableContentDelegate = new PlayableContentDelegate();
-      _playableContentManager.Delegate = playableContentDelegate;
+      _playableContentManager.Delegate = playableContentDelegate;            
 
       PlayableContentDataSource playableContentDataSource = new PlayableContentDataSource();
       _playableContentManager.DataSource = playableContentDataSource;
-    }
-
-    private void Connected(CPTemplateApplicationScene templateapplicationscene, CPInterfaceController interfacecontroller, CPWindow window)
-    {
-      
     }
   }
 }

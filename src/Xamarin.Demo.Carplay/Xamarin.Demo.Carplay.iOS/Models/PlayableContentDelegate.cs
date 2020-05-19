@@ -1,36 +1,36 @@
 ﻿using System;
+using CoreFoundation;
 using Foundation;
 using MediaPlayer;
+using UIKit;
 
 namespace Xamarin.Demo.Carplay.iOS.Models
 {
     internal class PlayableContentDelegate : MPPlayableContentDelegate
     {
-        public override void PlayableContentManager(MPPlayableContentManager contentManager, NSIndexPath indexPath, Action<NSError> completionHandler)
-        {
-            base.PlayableContentManager(contentManager, indexPath, completionHandler);
-        }
-
-        
-
         [Export("playableContentManager:initiatePlaybackOfContentItemAtIndexPath:completionHandler:")]
         public override void InitiatePlaybackOfContentItem(MPPlayableContentManager contentManager, NSIndexPath indexPath, Action<NSError> completionHandler)
         {
-            
+            DispatchQueue.MainQueue.DispatchAsync(() => ItemSelected(contentManager, indexPath));
+            completionHandler?.Invoke(null);
         }
 
-        public override nuint RetainCount { get; }
-
-        public override void ContextUpdated(MPPlayableContentManager contentManager, MPPlayableContentManagerContext context)
+        private void ItemSelected(MPPlayableContentManager contentManager, NSIndexPath indexPath)
         {
-          base.ContextUpdated(contentManager, context);
+            // todo: Play
+
+            MPContentItem item = contentManager.DataSource.ContentItem(indexPath);
+            contentManager.NowPlayingIdentifiers = new[] { item.Identifier };
+
+#if DEBUG
+            InvokeOnMainThread(() =>
+            {
+                UIApplication.SharedApplication.EndReceivingRemoteControlEvents();
+                UIApplication.SharedApplication.BeginReceivingRemoteControlEvents();
+            });
+#endif
         }
 
-        public override NSDictionary GetDictionaryOfValuesFromKeys(NSString[] keys)
-        {
-          return base.GetDictionaryOfValuesFromKeys(keys);
-        }
 
-        
     }
 }
