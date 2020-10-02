@@ -8,14 +8,14 @@ using Xamarin.Demo.Carplay.Model;
 
 namespace Xamarin.Demo.Carplay.iOS.Model
 {
-  public class CarIntegrationBridge : CPTemplateApplicationSceneDelegate, ICarIntegrationBridge
+  public class CarIntegrationBridge : ICarIntegrationBridge
   {
     public void ReloadStations()
     {
       MPPlayableContentManager.Shared?.ReloadData();
     }
 
-    public static void Setup()
+    public static void Init()
     {
       PlayableContentDelegate playableContentDelegate = new PlayableContentDelegate();
       MPPlayableContentManager.Shared.Delegate = playableContentDelegate;
@@ -24,18 +24,18 @@ namespace Xamarin.Demo.Carplay.iOS.Model
       MPPlayableContentManager.Shared.DataSource = playableContentDataSource;
     }
 
-    public delegate void CarPlayApplicationParameter(
-      CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController, CPWindow window);
+    //public delegate void CarPlayApplicationParameter(
+    //  CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController, CPWindow window);
 
-    public CarPlayApplicationParameter Connected { get; set; }
-    public CarPlayApplicationParameter Disconnected { get; set; }
+    //public CarPlayApplicationParameter Connected { get; set; }
+    //public CarPlayApplicationParameter Disconnected { get; set; }
 
-    public override void DidConnect(
-      CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController, CPWindow window)
-    {
-      // todo: Not working
-      base.DidConnect(templateApplicationScene, interfaceController, window);
-      Connected?.Invoke(templateApplicationScene, interfaceController, window);
-    }
+    //public override void DidConnect(
+    //  CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController, CPWindow window)
+    //{
+    //  // todo: Not working
+    //  base.DidConnect(templateApplicationScene, interfaceController, window);
+    //  Connected?.Invoke(templateApplicationScene, interfaceController, window);
+    //}
   }
 }

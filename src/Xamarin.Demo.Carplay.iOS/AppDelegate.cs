@@ -15,7 +15,7 @@ namespace Xamarin.Demo.Carplay.iOS
       LoadApplication(new App());
 
       CrossMediaManager.Current.Init();
-      CarIntegrationBridge.Setup();
+      CarIntegrationBridge.Init();
 
       return base.FinishedLaunching(app, options);
     }

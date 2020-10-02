@@ -10,11 +10,11 @@ namespace Xamarin.Demo.Carplay.iOS.Model
   internal class PlayableContentDataSource : MPPlayableContentDataSource
   {
     public static List<Station> Stations = new List<Station>
-    {
-      new Station{Name = "Rainbow radio", Url = "https://stream.rockantenne.de/rockantenne/stream/mp3"},
-      new Station{Name = "Unicorn radio", Url = "http://play.rockantenne.de/heavy-metal.m3u"}
-    };
-    
+  {
+    new Station{Name = "Rainbow radio", Url = "https://stream.rockantenne.de/rockantenne/stream/mp3"},
+    new Station{Name = "Unicorn radio", Url = "http://play.rockantenne.de/heavy-metal.m3u"}
+  };
+
     public override MPContentItem ContentItem(NSIndexPath indexPath)
     {
       var station = Stations[indexPath.Section];
