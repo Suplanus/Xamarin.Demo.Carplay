@@ -29,6 +29,7 @@
     <CodesignKey>Apple Development: Johann Weiher (T46TYS83XR)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
     <DebugType>none</DebugType>
@@ -40,6 +41,10 @@
     <MtouchArch>x86_64</MtouchArch>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
     <CodesignKey>Apple Development: Johann Weiher (T46TYS83XR)</CodesignKey>
+    <CrashReportingApiKey></CrashReportingApiKey>
+    <MtouchI18n></MtouchI18n>
+    <DelaySign>false</DelaySign>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
     <DebugSymbols>true</DebugSymbols>
@@ -56,6 +61,7 @@
     <MtouchLink>None</MtouchLink>
     <MtouchInterpreter>-all</MtouchInterpreter>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
     <DebugType>none</DebugType>
@@ -67,16 +73,21 @@
     <CodesignKey>Apple Development: Johann Weiher (T46TYS83XR)</CodesignKey>
     <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
     <CodesignProvision>VS: WildCard Development</CodesignProvision>
+    <DelaySign>false</DelaySign>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <LangVersion>8.0</LangVersion>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Main.cs" />
-    <Compile Include="AppDelegate.cs" />
+    <Compile Include="AppDelegateMain.cs" />
     <None Include="Entitlements.plist" />
     <None Include="Info.plist" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Model\PlayableContentDelegate.cs" />
     <Compile Include="Model\CarIntegrationBridge.cs" />
     <Compile Include="Model\PlayableContentDataSource.cs" />
+    <Compile Include="AppDelegatePhone.cs" />
+    <Compile Include="AppDelegateCar.cs" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="Resources\LaunchScreen.storyboard" />

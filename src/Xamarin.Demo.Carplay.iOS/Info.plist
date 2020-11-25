@@ -44,5 +44,22 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>UIApplicationSceneManifest</key>
+    <dict>
+        <key>UISceneConfigurations</key>
+        <dict>
+            <key>CPTemplateApplicationSceneSessionRoleApplication</key>
+            <array>
+                <dict>
+                    <key>UISceneClassName</key>
+                    <string>CPTemplateApplicationScene</string>
+                    <key>UISceneConfigurationName</key>
+                    <string>ParkingPlus-Car</string>
+                    <key>UISceneDelegateClassName</key>
+                    <string>ParkingPlus.AppSceneDelegateImp</string>
+                </dict>
+            </array>
+        </dict>
+    </dict>
 </dict>
 </plist>
