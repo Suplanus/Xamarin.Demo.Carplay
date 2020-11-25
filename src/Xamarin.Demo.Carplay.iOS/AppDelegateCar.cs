@@ -1,4 +1,5 @@
-﻿using CarPlay;
+﻿using System.Threading.Tasks;
+using CarPlay;
 using Foundation;
 using UIKit;
 
@@ -9,7 +10,7 @@ namespace Xamarin.Demo.Carplay.iOS
   {
     private CPInterfaceController _interfaceController;
 
-    public async void DidConnect(CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController)
+    public void DidConnect(CPTemplateApplicationScene templateApplicationScene, CPInterfaceController interfaceController)
     {
       _interfaceController = interfaceController;
     }
@@ -18,6 +19,11 @@ namespace Xamarin.Demo.Carplay.iOS
     {
       _interfaceController.Dispose();
       _interfaceController = null;
+    }
+
+    public async Task ShowNowPlaying()
+    {
+      await _interfaceController.PushTemplateAsync(CPNowPlayingTemplate.SharedTemplate, true);
     }
   }
 }
