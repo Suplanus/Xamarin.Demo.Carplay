@@ -41,7 +41,7 @@ namespace Xamarin.Demo.Carplay.iOS
     }
 
     [Export("application:configurationForConnectingSceneSession:options:")]
-    public override UISceneConfiguration GetConfiguration(UIApplication application, UISceneSession connectingSceneSession, UISceneConnectionOptions options)
+    public UISceneConfiguration GetConfiguration(UIApplication application, UISceneSession connectingSceneSession, UISceneConnectionOptions options)
     {
       UIWindowSceneSessionRole sessionRole;
       bool isCarPlaySceneSession = false;
