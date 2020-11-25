@@ -48,15 +48,26 @@
     <dict>
         <key>UISceneConfigurations</key>
         <dict>
+		   <key>CPTemplateApplicationSceneSessionRoleApplication</key>
+			<array>
+				<dict>
+					<key>UISceneClassName</key>
+					<string>CPTemplateApplicationScene</string>
+					<key>UISceneConfigurationName</key>
+					<string>Phone</string>
+					<key>UISceneDelegateClassName</key>
+					<string>AppDelegatePhone</string>
+				</dict>
+			</array>
             <key>CPTemplateApplicationSceneSessionRoleApplication</key>
             <array>
                 <dict>
                     <key>UISceneClassName</key>
                     <string>CPTemplateApplicationScene</string>
                     <key>UISceneConfigurationName</key>
-                    <string>ParkingPlus-Car</string>
+                    <string>Car</string>
                     <key>UISceneDelegateClassName</key>
-                    <string>ParkingPlus.AppSceneDelegateImp</string>
+                    <string>AppDelegateCar</string>
                 </dict>
             </array>
         </dict>
